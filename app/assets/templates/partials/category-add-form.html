@@ -1,0 +1,16 @@
+<div class="categories-add-container" ng-controller="CategoryController as categoryCtrl">
+  <div class="row">
+    <div class="col-md-8">
+      <fieldset class="form-group">
+        <textarea ng-model="categoryCtrl.category.name" class="short-field form-control" placeholder="Name of new category..." title="Name Category"></textarea>
+      </fieldset>
+    </div>
+    <div class="col-md-4">
+      <fieldset class="form-group">
+        <button ng-click="categoryCtrl.addCategory(shop)" class="btn btn-success">
+          Submit Category
+        </button>
+      </fieldset>
+    </div>
+  </div>
+</div>

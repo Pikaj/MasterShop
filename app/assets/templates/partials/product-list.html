@@ -1,0 +1,23 @@
+<div class="list-group-item" ng-repeat="product in shop.products| filter:query | orderBy:orderProp">
+  <div ng-controller="ProductController as productCtrl">
+    <product-options></product-options>
+    <div class="product-title">
+      <h3>
+        <span editable-text="product.name">
+          {{ product.name || "empty" }}
+        </span>
+        <em class="pull-right">
+          <span editable-text="product.price">
+            {{product.price | currency}}
+          </span>
+        </em>
+      </h3>
+    </div>
+
+    <!-- Image Gallery  -->
+    <product-gallery></product-gallery>
+
+    <!-- Product Tabs  -->
+    <product-tabs></product-tabs>
+  </div>
+</div>

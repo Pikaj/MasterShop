@@ -1,0 +1,26 @@
+<!--  Categories Tab's Content  -->
+<h4>Categories</h4>
+<ul ng-show="productCtrl.isSet(1)">
+  <li ng-repeat="category in product.categories">{{category}}</li>
+</ul>
+
+<div ng-show="productCtrl.isSet(2)">
+  <div ng-repeat="category in product.categories">
+    <label>
+      <input type="checkbox" checklist-model="productCtrl.product.categories" checklist-value="category"> {{category}}
+    </label>
+  </div>
+  <form class="categories-select-list">
+    <div class="row">
+      <div class="col-md-8">
+        <select ng-model="productCtrl.category" class="form-control ">
+          <option ng-repeat="category in shop.categories">
+            {{category.name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" ng-click="productCtrl.addCategory()">Submit</button>
+      </div>
+  </form>
+</div>

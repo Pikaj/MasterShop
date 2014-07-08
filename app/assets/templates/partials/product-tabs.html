@@ -1,0 +1,17 @@
+<section class="tabs-about-product">
+  <ul class="nav nav-pills">
+    <li ng-class="{ active:tab.isSet(1) }">
+      <a href ng-click="tab.setTab(1)">Description</a>
+    </li>
+    <li ng-class="{ active:tab.isSet(2) }">
+      <a href ng-click="tab.setTab(2)">Categories</a>
+    </li>
+  </ul>
+
+  <!--  Description Tab's Content  -->
+  <product-description ng-show="tab.isSet(1)" ></product-description>
+
+  <!-- List of product categories -->
+  <div product-categories ng-show="tab.isSet(2)"></div>
+
+</section>

@@ -1,0 +1,37 @@
+@managerAppServices = angular.module('managerAppServices', [
+  'ngResource'
+])
+
+@managerAppControllers = angular.module('managerAppControllers', [])
+
+@managerApp = angular.module('managerApp', [
+  'ngRoute',
+  'managerAppServices',
+  'managerAppControllers',
+  'restangular'
+])
+
+@managerApp.config(['$routeProvider', 'RestangularProvider', ($routeProvider, RestangularProvider) ->
+  $routeProvider.
+    when('/services', {
+      templateUrl: '<%= asset_path('services/index.html') %>',
+      controller: 'ServicesCtrl'
+    }).
+    when('/products', {
+      templateUrl: '<%= asset_path('products/index.html') %>',
+      controller: 'ProductsCtrl'
+    }).
+    when('/products/new', {
+      templateUrl: '<%= asset_path('products/show.html') %>',
+      controller: 'ProductNewCtrl'
+    }).
+    when('/product/:productId', {
+      templateUrl: '<%= asset_path('products/show.html') %>',
+      controller: 'ProductShowCtrl'
+    }).
+    otherwise({
+      templateUrl: '<%= asset_path('home/index.html') %>',
+      controller: 'HomeCtrl'
+    })
+  RestangularProvider.setRequestSuffix('.json')
+])

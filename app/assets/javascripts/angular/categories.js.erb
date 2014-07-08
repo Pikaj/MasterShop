@@ -1,0 +1,17 @@
+(function(){
+  var app = angular.module('category-directives', []);
+
+  app.directive("categoryCheckboxes", function() {
+    return {
+      restrict:"E",
+      templateUrl: "<%= asset_path("partials/category-checkboxes.html") %>"
+    };
+  });
+
+  app.directive("categoryAddForm", function() {
+    return {
+      restrict:"E",
+      templateUrl: "<%= asset_path("partials/category-add-form.html") %>"
+    };
+  });
+})();

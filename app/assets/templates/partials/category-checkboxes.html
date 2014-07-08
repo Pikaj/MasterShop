@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-2">
+    <h4>Categories</h4>
+  </div>
+  <div class="col-md-10">
+    <div class="category-checkbox checkbox" ng-repeat="category in shop.categories">
+      <label>
+        <input type="checkbox" checklist-model="productCtrl.product.categories" checklist-value="category.name">{{category.name}}
+      </label>
+    </div>
+    <category-add-form></category-add-form>
+  </div>
+</div>

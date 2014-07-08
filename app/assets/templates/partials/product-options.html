@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12">
+    <ul class="nav navbar-nav product-options-container">
+      <li ng-class="{ active:productCtrl.isSet(2)}">
+        <a href ng-click="productCtrl.setEdit(2); productCtrl.change(product)">
+          Edit
+        </a>
+      </li>
+      <li ng-class="{ active:productCtrl.isSet(1) }">
+        <a href ng-click="productCtrl.setEdit(1); productCtrl.update(product.$index, shop)">
+          Save
+        </a>
+      </li>
+      <li><a href ng-click="productCtrl.delete(product,$parent.$index, shop)">Delete</a></li>
+    </ul>
+  </div>
+</div>
